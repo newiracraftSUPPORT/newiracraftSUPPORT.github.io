@@ -244,31 +244,57 @@
       padding: 72px 0;
     }
 
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
     .app-card {
       display: flex;
-      gap: 44px;
-      align-items: flex-start;
-      padding: 48px;
+      flex-direction: column;
       border: 1px solid var(--border);
       border-radius: 3px;
       background: #fff;
-      max-width: 760px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .app-icon {
-      width: 78px;
-      height: 78px;
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px -26px rgba(15,14,13,0.35);
+    }
+
+    .app-media {
+      aspect-ratio: 16 / 9;
       background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      flex-shrink: 0;
+      overflow: hidden;
     }
 
-    .app-info h3 {
+    .app-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .app-media img.contain {
+      object-fit: contain;
+      padding: 32px;
+    }
+
+    .app-body {
+      padding: 30px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .app-body h3 {
       font-family: var(--display);
       font-size: 1.7rem;
       margin-bottom: 4px;
@@ -283,7 +309,7 @@
       margin-bottom: 14px;
     }
 
-    .app-info p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; margin-bottom: 22px; }
+    .app-body p { font-size: 0.93rem; color: var(--muted); line-height: 1.75; margin-bottom: 22px; }
 
     .badge {
       display: inline-block;
@@ -296,6 +322,7 @@
       text-transform: uppercase;
       color: var(--muted);
       border-radius: 20px;
+      align-self: flex-start;
     }
 
     /* ── SUPPORT ── */
@@ -480,7 +507,7 @@
       .nav-links { gap: 16px; }
       .hero-inner { padding: 60px 20px; }
       #home .values { grid-template-columns: 1fr; }
-      .app-card { flex-direction: column; gap: 20px; padding: 28px 20px; }
+      .apps-grid { grid-template-columns: 1fr; }
       .support-grid { grid-template-columns: 1fr; gap: 44px; }
     }
 
@@ -550,14 +577,48 @@
 
   <div class="apps-body">
     <div class="container">
-      <div class="app-card">
-        <div class="app-icon">✍</div>
-        <div class="app-info">
-          <h3>PostEasy</h3>
-          <p class="app-tag">AI Review Writing &amp; Publisher</p>
-          <p>Write better reviews in seconds. PostEasy uses AI to enhance your drafts, predict star ratings, and help you share feedback across multiple platforms — all from one app.</p>
-          <span class="badge">Coming Soon</span>
+      <div class="apps-grid">
+
+        <div class="app-card">
+          <div class="app-media"><img class="contain" src="images/posteazi_logo.png" alt="Posteazi logo"></div>
+          <div class="app-body">
+            <h3>Posteazi</h3>
+            <p class="app-tag">AI Review Writing &amp; Publisher</p>
+            <p>Write better reviews in seconds. Posteazi uses AI to enhance your drafts, predict star ratings, and help you share feedback across multiple platforms — all from one app.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
         </div>
+
+        <div class="app-card">
+          <div class="app-media"><img src="images/tap_feature.png" alt="Tap game banner"></div>
+          <div class="app-body">
+            <h3>Tap</h3>
+            <p class="app-tag">Game</p>
+            <p>Reach the highest score without pressing the red button. A fast, addictive reflex game that tests your focus and reaction time.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-media"><img src="images/faceovertime_feature.jpg" alt="Face Over Time feature graphic"></div>
+          <div class="app-body">
+            <h3>Face Over Time</h3>
+            <p class="app-tag">Wellness</p>
+            <p>One selfie a day. Face Over Time stitches your daily photos into a smooth time-lapse video of your face changing over weeks, months, and years.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <div class="app-media"><img src="images/armourdoc.png" alt="ArmourDoc banner"></div>
+          <div class="app-body">
+            <h3>ArmourDoc</h3>
+            <p class="app-tag">Security</p>
+            <p>Your travel documents, armoured. Store passports, visas, licences and IDs in an encrypted vault with biometric unlock, decoy modes, and watermarked viewing.</p>
+            <span class="badge">Coming Soon</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -657,7 +718,7 @@
       <div class="doc-wrap">
 
         <div class="doc-intro">
-          <p>newiracraft ("we", "us", or "our") operates mobile and web applications including PostEasy and other products. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our apps and services.</p>
+          <p>newiracraft ("we", "us", or "our") operates mobile and web applications including Posteazi and other products. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our apps and services.</p>
           <p>By using our apps, you agree to the practices described in this policy. If you do not agree, please discontinue use.</p>
         </div>
 
@@ -773,7 +834,7 @@
       <div class="doc-wrap">
 
         <div class="doc-intro">
-          <p>These Terms of Service ("Terms") govern your access to and use of apps and services provided by newiracraft ("we", "us", or "our"), including PostEasy and any other applications we operate.</p>
+          <p>These Terms of Service ("Terms") govern your access to and use of apps and services provided by newiracraft ("we", "us", or "our"), including Posteazi and any other applications we operate.</p>
           <p>By downloading, installing, or using any of our apps, you agree to be bound by these Terms. If you do not agree, do not use our services.</p>
         </div>
 
